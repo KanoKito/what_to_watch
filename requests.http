@@ -1,0 +1,46 @@
+### Тест получения мнения
+GET http://127.0.0.1:5000/api/opinions/1/
+Accept: application/json
+
+### Тест создания мнения (замените данные)
+POST http://127.0.0.1:5000/api/opinions/
+Content-Type: application/json
+
+{
+  "title": "Интерстеллар",
+  "text": "Грандиозный научно-фантастический фильм Кристофера Нолана",
+  "source": "https://www.imdb.com/title/tt0816692/",
+  "added_by": "cinema_lover"
+}
+
+### Тест несуществующего мнения
+GET http://127.0.0.1:5000/api/opinions/999/
+Accept: application/json
+
+### Тест изменения
+PATCH  http://127.0.0.1:5000/api/opinions/1/
+Content-Type: application/json
+
+{
+    "title": "Джой (2015)"
+}
+
+
+### Тест получения всех мнений
+GET http://127.0.0.1:5000/api/opinions/
+Accept: application/json
+
+
+### Тест создания мнения (замените данные)
+POST https://45459871-85be-4897-8130-c9a217cc2396.serverhub.praktikum-services.ru/api/add_story/
+Content-Type: application/json
+
+{
+  "title": "Интерстеллар",
+  "text": "Грандиозный научно-фантастический фильм Кристофера Нолана"
+}
+
+
+### Тест получения случайного мения
+GET http://127.0.0.1:5000/api/get-random-opinion/
+Accept: application/json
